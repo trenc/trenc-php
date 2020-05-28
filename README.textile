@@ -1,4 +1,4 @@
-h1. Apache PHP width mysqli extenstion and mhsendmail for mailhog
+h1. Apache PHP with mysqli extenstion and mhsendmail for mailhog
 
 p. Repository: myphpimage:latest
 
