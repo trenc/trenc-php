@@ -1,0 +1,15 @@
+h1. Apache PHP width mysqli extenstion and mhsendmail for mailhog
+
+p. Repository: myphpimage:latest
+
+h2. Create image
+
+bc. sudo docker build -t myphpimage:latest .
+
+h2. Changelog
+
+* 2020-03-16
+** PHP 7.4
+* 2020-01-31
+** initial
+** PHP 7.2
