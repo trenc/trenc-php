@@ -1,18 +1,14 @@
 h1. Apache/PHP docker image with useful enhancements
 
-p. Repository: scto-php:latest
-
-h2. Create image
-
-bc. $ sudo docker build -t <you-image-name-here> .
-
-h2. What's in it
-
 * based on chialab PHP image ["https://github.com/chialab/docker-php":https://github.com/chialab/docker-php]
 * support for SSL
 * www-data with home path for certificates
 * user and group of www-data are re-created with host's userID and groupID as workaround to file permission issues on the host (userID and groupID are set via .env file, see below)
 * mhsendmail as sendmail for using Mailhog ["https://github.com/mailhog/MailHog":https://github.com/mailhog/MailHog]
+
+h2. Create image
+
+bc. $ sudo docker build -t <you-image-name-here> .
 
 h2. File permissions on host
 
