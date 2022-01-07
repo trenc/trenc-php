@@ -4,7 +4,7 @@ p. Repository: scto-php:latest
 
 h2. Create image
 
-bc. sudo docker build -t scto-php:latest .
+bc. $ sudo docker build -t scto-php:latest .
 
 h2. What's in it
 
