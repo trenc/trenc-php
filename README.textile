@@ -17,3 +17,44 @@ On *nix hosts you can set the container www-data user with the your current user
 bc. USER_ID=1000
 GROUP_ID=1000
 
+h2. Using environment variables in docker-compose.yml
+
+Docker can make use environment variables in the .env file.
+
+h3. Example docker-compose.yml
+
+bc. web:
+	image: "webapp:${TAG}"
+
+h2. Using environment variables in PHP docker container
+
+If you pass the .env file in the service section in docker-compose.yml it will be passed to the environment of the docker container.
+
+h3. Example
+
+.env
+
+bc. USER=my-user-name
+PASS=my-password
+
+docker-compose.yml
+
+bc. version: '3.7'
+
+services:
+  php_apache:
+    image: scto-php:7.4
+    volumes:
+      - ./public_html/:/var/www/html/
+    ports:
+      - 80:80
+      - 443:443
+    env_file:
+      - .env
+
+And in PHP you can make use of the @getenv()@ function
+
+bc. <?php
+
+echo getenv('USER');
+echo getenv('PASS');
