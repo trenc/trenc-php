@@ -24,7 +24,7 @@ Docker can make use environment variables in the .env file.
 h3. Example docker-compose.yml
 
 bc. web:
-	image: "webapp:${TAG}"
+  image: "webapp:${TAG}"
 
 h2. Using environment variables in PHP docker container
 
@@ -39,7 +39,7 @@ PASS=my-password
 
 docker-compose.yml
 
-bc. version: '3.7'
+bc.. version: '3.7'
 
 services:
   php_apache:
@@ -52,9 +52,9 @@ services:
     env_file:
       - .env
 
-And in PHP you can make use of the @getenv()@ function
+p. And in PHP you can make use of the @getenv()@ function
 
-bc. <?php
+bc.. <?php
 
 echo getenv('USER');
 echo getenv('PASS');
