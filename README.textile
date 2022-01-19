@@ -3,19 +3,18 @@ h1. Apache/PHP docker image with useful enhancements
 * based on chialab PHP image ["https://github.com/chialab/docker-php":https://github.com/chialab/docker-php]
 * support for SSL
 * www-data with home path for certificates
-* user and group of www-data are re-created with host's userID and groupID as workaround to file permission issues on the host (userID and groupID are set via .env file, see below)
+* user and group of www-data are re-created with host's userID and groupID as workaround to file permission issues on the host (userID and groupID are set via --build-arg parameter)
 * mhsendmail as sendmail for using Mailhog ["https://github.com/mailhog/MailHog":https://github.com/mailhog/MailHog]
 
-h2. Create image
+h2. Building the image
 
-bc. $ sudo docker build -t <you-image-name-here> .
+Replace USER_ID and GROUP_ID with your host IDs and the set the name of the resulting image.
 
-h2. File permissions on host
+bc. $ sudo docker build --build-arg USER_ID=<you-user-id-on-host> --build-arg GROUP_ID=<your-group-id-on-host> -t <you-image-name-here> .
 
-On *nix hosts you can set the container www-data user with the your current user and group ID to have write permissions on a docker volume. Just create a .env file in the project root with you IDs and build the image.
+h3. example
 
-bc. USER_ID=1000
-GROUP_ID=1000
+bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 -t scto-php:7.4 .
 
 h2. Using environment variables in docker-compose.yml
 
@@ -31,6 +30,8 @@ h2. Using environment variables in PHP docker container
 If you pass the .env file in the service section in docker-compose.yml it will be passed to the environment of the docker container.
 
 h3. Example
+
+bc. 
 
 .env
 
