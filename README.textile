@@ -8,7 +8,7 @@ h1. Apache/PHP docker image with useful enhancements
 
 h2. Building the image
 
-Replace USER_ID and GROUP_ID with your host IDs and the set the name of the resulting image.
+Replace USER_ID and GROUP_ID with your host IDs and the TAG you want to create from, and the set the name of the resulting image.
 
 bc. $ sudo docker build --build-arg USER_ID=<you-user-id-on-host> --build-arg GROUP_ID=<your-group-id-on-host> --build-arg TAG=<php-apache-version> -t <you-image-name-here> .
 
@@ -16,7 +16,7 @@ h3. Example
 
 Building an image based on chialab/php from the tag 8.0-apache. The resulting image is named sctp-php:8.0
 
-bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 --build-arg TAG=8.1-apache -t scto-php:8.1 .
+bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 --build-arg TAG=8.0-apache -t scto-php:8.0 .
 
 h2. Using environment variables in docker-compose.yml
 
