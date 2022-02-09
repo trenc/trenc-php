@@ -1,12 +1,13 @@
-FROM chialab/php:7.4-apache
+ARG USER_ID
+ARG GROUP_ID
+ARG TAG
+
+FROM chialab/php:${TAG}
 
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y -q --no-install-recommends ssl-cert && \
     apt-get clean
-
-ARG USER_ID
-ARG GROUP_ID
 
 RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
     userdel -f www-data &&\
