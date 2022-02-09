@@ -16,7 +16,7 @@ h3. Example
 
 Building an image based on chialab/php from the tag 8.1-apache. The resulting image is named sctp-php:8.1
 
-bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 --build-arg=8.1-apache -t scto-php:8.1 .
+bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 --build-arg TAG=8.1-apache -t scto-php:8.1 .
 
 h2. Using environment variables in docker-compose.yml
 
