@@ -14,7 +14,7 @@ bc. $ sudo docker build --build-arg USER_ID=<you-user-id-on-host> --build-arg GR
 
 h3. Example
 
-Building an image based on chialab/php from the tag 8.1-apache. The resulting image is named sctp-php:8.1
+Building an image based on chialab/php from the tag 8.0-apache. The resulting image is named sctp-php:8.0
 
 bc. $ sudo docker build --build-arg USER_ID=1000 --build-arg GROUP_ID=1000 --build-arg TAG=8.1-apache -t scto-php:8.1 .
 
