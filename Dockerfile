@@ -22,7 +22,7 @@ RUN if [ ${USER_ID:-0} -ne 0 ] && [ ${GROUP_ID:-0} -ne 0 ]; then \
 ;fi
 
 RUN curl --location --output /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64 && chmod +x /usr/local/bin/mhsendmail
-RUN echo 'sendmail_path="/usr/local/bin/mhsendmail --smtp-addr=mailhog:1025 --from=no-root@localhost"' > /usr/local/etc/php/conf.d/mailhog.ini
+RUN echo 'sendmail_path="/usr/local/bin/mhsendmail -t --smtp-addr=mailhog:1025 --from=no-root@localhost"' > /usr/local/etc/php/conf.d/mailhog.ini
 
 RUN a2enmod ssl rewrite expires && \
     a2ensite default-ssl
