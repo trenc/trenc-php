@@ -4,7 +4,7 @@ FROM chialab/php:${TAG}
 
 RUN apt-get update && \
     apt-get upgrade -y && \
-    apt-get install -y -q --no-install-recommends ssl-cert mariadb-client && \
+    apt-get install -y -q --no-install-recommends ssl-cert mariadb-client imagemagick && \
     apt-get clean
 
 ARG USER_ID
